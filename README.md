@@ -26,7 +26,7 @@ r_timeline+
 
 
 
-## Installation
+## Installation With Docker
 
 Fisrt Time (to create image & container)
 
@@ -43,4 +43,14 @@ Access to container:
 docker exec -it <container-name> /bin/sh
 docker logs -f <container-name> # tracking server
 
+## Application
+
+Website:
+
+    http://localhost:5000
+
+
+API REST: 
+
+    http://localhost:5000/api/users/1
 
