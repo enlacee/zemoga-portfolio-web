@@ -87,3 +87,7 @@ API REST:
 
     http://localhost:5000/api/users/1
 
+
+### preview
+
+![thumbnail](docs/thumbnail.png)
