@@ -1,8 +1,6 @@
 from flask import render_template, Blueprint
 import requests
-
 from config import Config
-# from . import home
 
 API_URL = Config.API_URL
 home_scope = Blueprint("home_scope", __name__)

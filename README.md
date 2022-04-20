@@ -1,4 +1,4 @@
-# Zemoga Portfolio web (test project)
+# REQUIREMENT: Zemoga Portfolio web (test project) REQUIREMENT
 
 ## Overview
 
@@ -25,25 +25,52 @@ https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuse
 r_timeline+
 
 
+# SOLUTION: by Anibal Copitan
 
-## Installation With Docker
+Observation:
 
-Fisrt Time (to create image & container)
+ - I have used modularization for API and website
+ - The aws database was not disponible for to use on this project. I use the simple SQLITE
+    (the database name was not)
+
+Note: The solution dont have:
+ - twitter timeLine
+
+## 01.Requiremnets
+
+    python 3.7
+
+## 02.Setttings
+
+By terminal execute the next command: (here we are going to set the  enviroment variables)
+
+    mv app/.env.dist app/.env
+
+(optional) This is default variables if you need change for example the port you can do it:
+
+    FLASK_ENV=development
+    SERVER_NAME=localhost:5000
+    DEBUG=True
+    API_URL=http://localhost:5000/api
+
+## 03.Installation With Docker
+
+Create image & container
 
     docker-compose build
     docker-compose up
 
-Second Time (deploy in development)
+(optional)Deploy in docker container
 
     docker start <container-name>
     docker stop <container-name>
 
-Access to container:
+(optional) Access to container:
 
 docker exec -it <container-name> /bin/sh
-docker logs -f <container-name> # tracking server
+docker logs -f <container-name-or-id> # tracking server
 
-## Application
+## 04.Acces to the Projects:
 
 Website:
 
