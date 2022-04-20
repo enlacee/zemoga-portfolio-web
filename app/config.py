@@ -10,3 +10,5 @@ class Config:
     TEMPLATE_FOLDER = "home/templates/"
     STATIC_FOLDER = "home/static/"
     DATABASE_PATH = "application/api/database/db.sqlite"
+    
+    API_URL = "http://localhost:5000/api"

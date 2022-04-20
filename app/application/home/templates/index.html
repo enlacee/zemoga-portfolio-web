@@ -1,35 +1,46 @@
 {% extends 'base.html' %}
+ 
+{% set the_title = "Error in Data Request" %}
+{% set has_valid_data = False %}
+{% if 'id' in data %}
+    {% set has_valid_data = True %}
+    {% set the_title = data["first_name"] + " " + data["last_name"] %}
+{% endif %}
 
-{% block title %}Pepe Rios (BackEnd Developer){% endblock %}
+{% block title %}{{the_title}}{% endblock %}
 
 {% block content %}
-<main>
-
-    <section class="py text-center container">
-        <div class="row py-lg-4">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Pepe Rios (BackEnd Developer)</h1>
-                <img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="profile picture" width="250" height="250px">
-                <p class="lead text-muted h4 pt-2">
-                    Responsible for Designing and developing a highly scalable and available cloud back using Cassandra, Elastic Search, and Spark analytics platforms, Optimizing and performance tuning to process a large volume of data streams for analysis and persistence</p>
-                <p><span class="fw-bold">Skills:</span> Java, C#, JavaScript</p>
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <p class="fw-bold">Twitter timeline:</p>
-                            <ul class="list-group">
-                                <li class="list-group-item text-left">Cras justo odio</li>
-                                <li class="list-group-item text-right">Dapibus ac facilisis in</li>
-                                <li class="list-group-item text-left">Morbi leo risus</li>
-                              </ul>
-                        </div>
+    {% if has_valid_data == True %}
+        <main>
+            <section class="py text-center container">
+                <div class="row py-lg-4">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <h1 class="fw-light">{{the_title}}</h1>
+                        <img src="{{ data['image_url'] }}" alt="profile picture" width="250" height="250px">
+                        <p class="lead text-muted h4 pt-2">
+                            {{data["description"]}}
+                        </p>
+                        <p><span class="fw-bold">Skills:</span> {{data["skills"]}}</p>
+                        <!-- <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="fw-bold">Twitter timeline:</p>
+                                    <ul class="list-group">
+                                        <li class="list-group-item text-left">Cras justo odio</li>
+                                        <li class="list-group-item text-right">Dapibus ac facilisis in</li>
+                                        <li class="list-group-item text-left">Morbi leo risus</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> -->
+                        <p class="py-lg-2"><span class="fw-bold">Contact: </span><a href="mailto:{{data['email']}}">{{data['email']}}</a></p>
                     </div>
-                </div>
-                <p class="py-lg-2"><span class="fw-bold">Contact: </span><a href="mailto:hello@pprios.com">hello@pprios.com</a></p>
             </div>
-      </div>
-    </section>
-
-  
-</main>
+            </section>
+        </main>
+    {% else %}
+        <main>
+            <h1>{{the_title}}</h1>
+        </main>
+    {% endif %}
 {% endblock %}
