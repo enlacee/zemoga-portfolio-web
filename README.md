@@ -76,6 +76,11 @@ Create image & container
     docker exec -it <container-name> /bin/sh
     docker logs -f <container-name-or-id> # tracking server
 
+## 04. test
+
+    cd app
+    pytest -v
+
 ## 04.Acces to the Projects:
 
 Website:
