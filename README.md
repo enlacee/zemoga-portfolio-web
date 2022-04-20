@@ -1,4 +1,4 @@
-# REQUIREMENT: Zemoga Portfolio web (test project) REQUIREMENT
+# REQUIREMENT: Zemoga Portfolio web (test project)
 
 ## Overview
 
@@ -25,7 +25,12 @@ https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuse
 r_timeline+
 
 
-# SOLUTION: by Anibal Copitan
+
+
+
+
+
+# SOLUTION
 
 Observation:
 
@@ -39,6 +44,7 @@ Note: The solution dont have:
 ## 01.Requiremnets
 
     python 3.7
+    flask
 
 ## 02.Setttings
 
@@ -67,8 +73,8 @@ Create image & container
 
 (optional) Access to container:
 
-docker exec -it <container-name> /bin/sh
-docker logs -f <container-name-or-id> # tracking server
+    docker exec -it <container-name> /bin/sh
+    docker logs -f <container-name-or-id> # tracking server
 
 ## 04.Acces to the Projects:
 
